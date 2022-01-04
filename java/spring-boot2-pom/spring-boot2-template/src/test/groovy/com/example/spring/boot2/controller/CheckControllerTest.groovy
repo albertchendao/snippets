@@ -9,7 +9,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 import spock.lang.Specification
 
-@WebMvcTest
+@WebMvcTest(CheckController)
 class CheckControllerTest extends Specification {
 
     @Autowired

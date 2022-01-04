@@ -54,11 +54,11 @@
             <dependency>
                 <groupId>org.codehaus.groovy.modules.http-builder</groupId>
                 <artifactId>http-builder</artifactId>
-                <version>0.7.2</version>
+                <version>0.7.1</version>
             </dependency>
             <dependency>
                 <groupId>io.github.http-builder-ng</groupId>
-                <artifactId>http-builder-ng-okhttp</artifactId>
+                <artifactId>http-builder-ng-apache</artifactId>
                 <version>1.0.4</version>
             </dependency>
         </dependencies>

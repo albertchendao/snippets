@@ -7,21 +7,20 @@ import spock.lang.Specification
 /**
  * 使用 http-builder-ng
  */
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 class TestHttpBuilderNg extends Specification {
 
     def '__TestHttpBuilderNg'() {
         given:
         def httpBin = HttpBuilder.configure {
-            request.uri = 'http://localhost:8080'
+            request.uri = 'https://www.baidu.com'
         }
 
         when:
         def response = httpBin.get {
-            request.uri.path = '/check.do'
+            request.uri.path = '/'
         }
 
         then:
-        assert response == "ok"
+        assert response != null
     }
 }

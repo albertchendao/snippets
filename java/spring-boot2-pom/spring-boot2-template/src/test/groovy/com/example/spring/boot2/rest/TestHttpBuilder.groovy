@@ -7,17 +7,17 @@ import spock.lang.Specification
 /**
  * 使用 http-builder
  */
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 class TestHttpBuilder extends Specification {
 
     def '__TestHttpBuilder'() {
         given:
-        def client = new RESTClient("http://localhost:8080")
+        def client = new RESTClient("https://www.baidu.com")
 
         when:
-        def response = client.get(path: '/check.do')
+        def response = client.get(path: '/')
 
         then:
-        assert response.status == 200: 'response code should be 200 when tried to authenticate with valid credentials'
+        assert response.status == 200
+        print(response.responseData)
     }
 }

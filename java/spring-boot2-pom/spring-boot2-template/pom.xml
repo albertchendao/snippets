@@ -58,7 +58,7 @@
         </dependency>
         <dependency>
             <groupId>io.github.http-builder-ng</groupId>
-            <artifactId>http-builder-ng-okhttp</artifactId>
+            <artifactId>http-builder-ng-apache</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
