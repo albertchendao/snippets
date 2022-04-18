@@ -11,6 +11,7 @@ buildNumber.properties
 .mvn/timing.properties
 
 .idea/
+.flattened-pom.xml
 
 ## File-based project format:
 *.iws
