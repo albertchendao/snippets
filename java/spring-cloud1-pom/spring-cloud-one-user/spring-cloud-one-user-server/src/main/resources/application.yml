@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: spring-cloud-one-user
+  profiles:
+    active: dev
+
+server:
+  port: 8001
+
+feign:
+  hystrix:
+    enabled: false
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      management.port: ${management.port}
+      health.path: ${context-path}/health
+      metrics.path: ${context-path}/prometheus
+      management.context-path: ${context-path}
+  client:
+#    lease-expiration-duration-in-seconds: 60
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+
+management:
+  port: 18001
+  context-path: /
+  metrics:
+    tags:
+      application: ${spring.application.name}
+      profile: '@profileActive@'
+  endpoints:
+    enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+  security:
+    enabled: false
+
+elastic:
+  enable: false
+  username:
+  password:
+  ips:
+  port:
+

@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: spring-cloud-one-order
+
+server:
+  port: 9001
+
+feign:
+  httpclient:
+    enabled: true
+  hystrix:
+    enabled: false
+
+ribbon:
+  eager-load:
+    enabled: true
+#  #说明：同一台实例的最大自动重试次数，默认为1次，不包括首次
+#  MaxAutoRetries: 1
+#  #说明：要重试的下一个实例的最大数量，默认为1，不包括第一次被调用的实例
+#  MaxAutoRetriesNextServer: 1
+#  #说明：是否所有的操作都重试，默认为true
+#  OkToRetryOnAllOperations: true
+#  #说明：从注册中心刷新服务器列表信息的时间间隔，默认为2000毫秒，即2秒
+  ServerListRefreshInterval: 60000
+
+management:
+  security:
+    enabled: false
+  port: 1${server.port}
+  context-path: /
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      management.port: ${management.port}
+  client:
+#    register-with-eureka: false
+#    registry-fetch-interval-seconds: 60
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+
+#logging:
+#  level:
+#    root: debug

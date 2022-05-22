@@ -9,14 +9,26 @@
     <version>${revision}</version>
     <modules>
         <module>common-test</module>
+        <module>compiler</module>
+        <module>demo-hadoop</module>
+        <module>common-helper</module>
+        <module>demo-javaparser</module>
+        <module>demo-jdk</module>
+        <module>demo-junit</module>
+        <module>demo-jxls</module>
+        <module>demo-scala</module>
+        <module>demo-mybatis</module>
+        <module>demo-servlet</module>
+        <module>demo-spark</module>
     </modules>
 
     <packaging>pom</packaging>
     <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
-        <revision>1.0.0-SNAPSHOT</revision>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.16.18</lombok.version>
         <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
         <junit.version>4.13.2</junit.version>

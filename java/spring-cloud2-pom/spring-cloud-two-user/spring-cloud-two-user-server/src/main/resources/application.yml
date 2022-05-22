@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: spring-cloud-two-user
+  profiles:
+    active: dev
+
+server:
+  port: 8001
+
+management:
+  security:
+    enabled: false
+  port: 1${server.port}
+  context-path: /
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      management.port: ${management.port}
+  client:
+#    lease-expiration-duration-in-seconds: 60
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+<!--        <environment id="development">-->
+<!--            <transactionManager type="JDBC"/>-->
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="com.mysql.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql://localhost:3306/srv?useUnicode=true&amp;useSSL=false"/>-->
+<!--                <property name="username" value="root"/>-->
+<!--                <property name="password" value=""/>-->
+<!--            </dataSource>-->
+<!--        </environment>-->
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="org.postgresql.Driver"/>
+<!--                <property name="url" value="jdbc:postgresql://free-tier8.aws-ap-southeast-1.cockroachlabs.cloud:26257/defaultdb?sslmode=verify-full&amp;sslrootcert=/Users/albert/.postgresql/root.crt&amp;options=&#45;&#45;cluster%3Dsilly-yak-587"/>-->
+                <property name="url" value="jdbc:postgresql://free-tier8.aws-ap-southeast-1.cockroachlabs.cloud:26257/silly-yak-587.defaultdb?sslmode=verify-full&amp;sslrootcert=/Users/albert/.postgresql/root.crt"/>
+                <property name="username" value="albert"/>
+                <property name="password" value="wbt-PIVXcKLydlWR"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="org/example/mybatis/dao/UserMapper.xml"/>
+        <mapper class="org.example.mybatis.dao.TestMapper"/>
+    </mappers>
+</configuration>

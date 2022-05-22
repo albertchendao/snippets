@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: spring-cloud-two-order
+  profiles:
+    active: dev
+
+server:
+  port: 9001
+
+management:
+  security:
+    enabled: false
+  port: 1${server.port}
+  context-path: /
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      management.port: ${management.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+#logging:
+#  level:
+#    root: debug

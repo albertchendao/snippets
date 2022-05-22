@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mybatis.dao.UserMapper">
+    <!--
+    CREATE TABLE tb_user (id INT PRIMARY KEY, name VARCHAR(50));
+    INSERT INTO tb_user (id, name) VALUES (1, 'Albert');
+-->
+    <select id="getUser" parameterType="int" resultType="org.example.mybatis.entity.User">
+        select id,name from tb_user where id = #{id}
+    </select>
+</mapper>
