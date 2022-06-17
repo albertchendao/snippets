@@ -33,6 +33,10 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>common-helper</artifactId>
+        </dependency>
 
         <!--   测试时依赖     -->
         <dependency>
