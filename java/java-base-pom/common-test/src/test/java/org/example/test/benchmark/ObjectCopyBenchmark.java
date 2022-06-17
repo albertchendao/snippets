@@ -1,5 +1,6 @@
 package org.example.test.benchmark;
 
+import com.alibaba.fastjson.JSON;
 import com.esotericsoftware.kryo.Kryo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
@@ -7,8 +8,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.SerializationUtils;
+import org.nustaq.serialization.FSTConfiguration;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
+import org.openjdk.jmh.runner.RunnerException;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -24,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 @Fork(1)
 @State(value = Scope.Benchmark)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
-public class DeepCopyBenchmark {
+public class ObjectCopyBenchmark extends BaseBenchmark {
 
     @Data
     @NoArgsConstructor
@@ -94,6 +97,10 @@ public class DeepCopyBenchmark {
         kryo.register(Address.class);
         return kryo;
     });
+    /**
+     * FST 工具
+     */
+    private static final FSTConfiguration configuration = FSTConfiguration.createStructConfiguration();
 
     /**
      * 浅拷贝 - 构造函数
@@ -163,6 +170,15 @@ public class DeepCopyBenchmark {
     }
 
     /**
+     * 深拷贝 - FST
+     */
+    @Benchmark
+    public void testDeepCopyByFST(Blackhole blackhole) {
+        User target = configuration.deepCopy(origin);
+        blackhole.consume(target);
+    }
+
+    /**
      * 深拷贝 - SerializationUtils
      */
     @Benchmark
@@ -188,4 +204,20 @@ public class DeepCopyBenchmark {
         User target = objectMapper.readValue(objectMapper.writeValueAsString(origin), User.class);
         blackhole.consume(target);
     }
+
+    /**
+     * 深拷贝 - Fastjson
+     */
+    @Benchmark
+    public void testDeepCopyByFastjson(Blackhole blackhole) {
+        User target = JSON.parseObject(JSON.toJSONString(origin), User.class);
+        blackhole.consume(target);
+    }
+
+    public static void main(String[] args) throws RunnerException {
+//        run(ObjectCopyBenchmark.class);
+        User target = kryo.get().copy(origin);
+        System.out.println(target);
+    }
+
 }

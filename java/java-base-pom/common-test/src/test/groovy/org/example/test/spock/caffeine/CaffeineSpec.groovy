@@ -69,6 +69,9 @@ class CaffeineSpec extends Specification {
         // 不会缓存 null
         cache.get(10) == null
         adder.intValue() == 5
+
+        // 会异常
+//        cache.get(null) == null
     }
 
     /**

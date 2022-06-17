@@ -229,6 +229,7 @@
                         <includes>
                             <include>**/*Test.*</include>
                             <include>**/*Spec.*</include>
+                            <include>**/*Benchmark.*</include>
                         </includes>
                     </configuration>
                 </plugin>
