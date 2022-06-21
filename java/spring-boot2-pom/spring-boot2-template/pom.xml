@@ -45,13 +45,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.spockframework</groupId>
-            <artifactId>spock-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.spockframework</groupId>
-            <artifactId>spock-spring</artifactId>
+            <groupId>org.example</groupId>
+            <artifactId>common-test</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
