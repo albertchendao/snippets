@@ -18,6 +18,7 @@
     <modules>
         <module>spring-boot2-template</module>
         <module>spring-boot2-batch</module>
+        <module>spring-boot2-dubbo</module>
     </modules>
 
     <properties>
