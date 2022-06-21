@@ -1,0 +1,16 @@
+server:
+  port: 8180
+spring:
+  application:
+    name: spring-boot2-dubbo-provider
+dubbo:
+  application:
+    name: spring-boot2-dubbo-provider
+  protocol:
+    name: dubbo
+    port: 20880
+  registry:
+    address: zookeeper://localhost:2181
+  consumer:
+    check: false
+    timeout: 3000

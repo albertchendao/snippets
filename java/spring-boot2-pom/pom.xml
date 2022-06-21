@@ -18,7 +18,9 @@
     <modules>
         <module>spring-boot2-template</module>
         <module>spring-boot2-batch</module>
-        <module>spring-boot2-dubbo</module>
+        <module>spring-boot2-dubbo-provider</module>
+        <module>spring-boot2-dubbo-consumer</module>
+        <module>spring-boot2-common</module>
     </modules>
 
     <properties>
