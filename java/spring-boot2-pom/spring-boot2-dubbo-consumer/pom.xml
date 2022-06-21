@@ -15,6 +15,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <dubbo.version>2.7.5</dubbo.version>
+        <sentinel.version>1.7.1</sentinel.version>
     </properties>
 
     <dependencies>
@@ -49,6 +50,16 @@
                 </exclusion>
             </exclusions>
             <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-apache-dubbo-adapter</artifactId>
+            <version>${sentinel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
+            <version>${sentinel.version}</version>
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
