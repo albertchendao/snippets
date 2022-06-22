@@ -20,6 +20,7 @@
         <module>demo-mybatis</module>
         <module>demo-servlet</module>
         <module>demo-spark</module>
+        <module>demo-sentinel</module>
     </modules>
 
     <packaging>pom</packaging>
