@@ -21,6 +21,7 @@
         <module>demo-servlet</module>
         <module>demo-spark</module>
         <module>demo-sentinel</module>
+        <module>demo-thread</module>
     </modules>
 
     <packaging>pom</packaging>
