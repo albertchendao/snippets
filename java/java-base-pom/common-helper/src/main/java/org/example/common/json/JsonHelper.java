@@ -11,4 +11,12 @@ public class JsonHelper {
         return JSON.toJSONString(object);
     }
 
+    /**
+     * 将 json 转换为对象
+     */
+    public static <T> T parseObject(String json, Class<T> cls) {
+        return JSON.parseObject(json, cls);
+    }
+
+
 }
