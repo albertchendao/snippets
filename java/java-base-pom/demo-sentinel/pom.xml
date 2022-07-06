@@ -23,11 +23,11 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.example</groupId>
-            <artifactId>common-test</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-core</artifactId>
+            <version>1.8.4</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
@@ -41,18 +41,11 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-core</artifactId>
-            <version>1.8.4</version>
+            <groupId>org.example</groupId>
+            <artifactId>common-test</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.gmavenplus</groupId>
-                <artifactId>gmavenplus-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
