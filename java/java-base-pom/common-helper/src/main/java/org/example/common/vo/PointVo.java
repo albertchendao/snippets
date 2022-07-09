@@ -1,6 +1,5 @@
 package org.example.common.vo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
