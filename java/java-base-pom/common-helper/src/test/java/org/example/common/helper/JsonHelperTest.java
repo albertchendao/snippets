@@ -1,6 +1,7 @@
-package org.example.common.json;
+package org.example.common.helper;
 
 import lombok.Data;
+import org.example.common.helper.JsonHelper;
 import org.junit.Test;
 
 public class JsonHelperTest {

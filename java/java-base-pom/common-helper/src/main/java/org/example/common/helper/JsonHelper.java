@@ -1,4 +1,4 @@
-package org.example.common.json;
+package org.example.common.helper;
 
 import com.alibaba.fastjson.JSON;
 
