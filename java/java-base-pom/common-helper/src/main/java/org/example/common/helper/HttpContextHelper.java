@@ -116,7 +116,7 @@ public class HttpContextHelper {
     public static void response(HttpServletResponse response, RespCode errorCode) throws IOException {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        response.getWriter().print(JsonHelper.toJSONString(error(errorCode)));
+        response.getWriter().print(JsonHelper.toString(error(errorCode)));
     }
 
     /**

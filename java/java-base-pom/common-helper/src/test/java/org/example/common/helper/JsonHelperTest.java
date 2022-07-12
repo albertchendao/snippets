@@ -21,6 +21,6 @@ public class JsonHelperTest {
     }
 
     void print(Object o) {
-        System.out.println(JsonHelper.toJSONString(o));
+        System.out.println(JsonHelper.toString(o));
     }
 }
