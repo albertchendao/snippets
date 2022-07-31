@@ -2,6 +2,7 @@ package org.example.common.helper;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -11,6 +12,7 @@ import java.util.function.Function;
 /**
  * 比较器工具
  */
+@Slf4j
 public class ComparatorHelper {
 
     /**
@@ -45,7 +47,7 @@ public class ComparatorHelper {
         l.add(new InnerDto(2));
 
         l.sort(ComparatorHelper.nullsComparing(InnerDto::getOrder, false, false));
-        System.out.println(l);
+        log.debug("{}", l);
     }
 }
 

@@ -132,7 +132,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>4.3.25.RELEASE</version>
-            <scope>provided</scope>
             <exclusions>
                 <exclusion>
                     <artifactId>junit-dep</artifactId>

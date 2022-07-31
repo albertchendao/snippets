@@ -11,6 +11,7 @@
     <artifactId>netty-pom</artifactId>
     <modules>
         <module>netty4-demo</module>
+        <module>netty-study</module>
     </modules>
     <packaging>pom</packaging>
 
