@@ -37,6 +37,11 @@ public class ComparatorHelper {
     @AllArgsConstructor
     private static class InnerDto {
         private Integer order;
+
+        @Override
+        public String toString() {
+            return JsonHelper.toString(this);
+        }
     }
 
     public static void main(String[] args) {
@@ -47,6 +52,12 @@ public class ComparatorHelper {
         l.add(new InnerDto(2));
 
         l.sort(ComparatorHelper.nullsComparing(InnerDto::getOrder, false, false));
+        log.debug("{}", l);
+        l.sort(ComparatorHelper.nullsComparing(InnerDto::getOrder, false, true));
+        log.debug("{}", l);
+        l.sort(ComparatorHelper.nullsComparing(InnerDto::getOrder, true, false));
+        log.debug("{}", l);
+        l.sort(ComparatorHelper.nullsComparing(InnerDto::getOrder, true, true));
         log.debug("{}", l);
     }
 }

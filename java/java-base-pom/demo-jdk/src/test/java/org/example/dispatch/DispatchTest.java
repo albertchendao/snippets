@@ -109,7 +109,7 @@ public class DispatchTest {
         man.accept(execute);
         woman.accept(execute);
     }
-    
+
     @Test
     public void testDoubleBound2() {
         Execute execute = new Execute();
