@@ -22,6 +22,7 @@
         <module>demo-spark</module>
         <module>demo-sentinel</module>
         <module>demo-thread</module>
+        <module>demo-property</module>
     </modules>
 
     <packaging>pom</packaging>
