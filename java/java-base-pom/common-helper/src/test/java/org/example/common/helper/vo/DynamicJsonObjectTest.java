@@ -3,10 +3,11 @@ package org.example.common.helper.vo;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vivo.appstore.common.util.JsonUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.FieldNameConstants;
+import org.example.common.helper.JsonHelper;
+import org.example.common.vo.DynamicJsonObject;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -133,9 +134,9 @@ public class DynamicJsonObjectTest {
     public void testInfo() throws Exception {
         {
             // fastjson 序列化
-            Assert.assertEquals(INFO_JSON_STR, JsonUtil.toString(INFO));
+            Assert.assertEquals(INFO_JSON_STR, JsonHelper.toString(INFO));
             // fastjson 反序列化
-            Info result = JsonUtil.parse(V0_JSON_STR, Info.class);
+            Info result = JsonHelper.parseObject(V0_JSON_STR, Info.class);
             Assert.assertEquals(INFO.get(FIELD_IMG), result.get(FIELD_IMG));
             Assert.assertEquals(INFO.get(FIELD_EXTRA), result.get(FIELD_EXTRA));
         }
@@ -156,9 +157,9 @@ public class DynamicJsonObjectTest {
     public void testV0() throws Exception {
         {
             // fastjson 序列化
-            Assert.assertEquals(V0_JSON_STR, JsonUtil.toString(V0));
+            Assert.assertEquals(V0_JSON_STR, JsonHelper.toString(V0));
             // fastjson 反序列化
-            InfoV0 result = JsonUtil.parse(V0_JSON_STR, InfoV0.class);
+            InfoV0 result = JsonHelper.parseObject(V0_JSON_STR, InfoV0.class);
             Assert.assertEquals(V0.getImg(), result.getImg());
             Assert.assertEquals(V0.get(FIELD_EXTRA), result.get(FIELD_EXTRA));
         }
@@ -179,9 +180,9 @@ public class DynamicJsonObjectTest {
     public void testV1() throws Exception {
         {
             // fastjson 序列化
-            Assert.assertEquals(V1_JSON_STR, JsonUtil.toString(V1));
+            Assert.assertEquals(V1_JSON_STR, JsonHelper.toString(V1));
             // fastjson 反序列化
-            InfoV1 result = JsonUtil.parse(V1_JSON_STR, InfoV1.class);
+            InfoV1 result = JsonHelper.parseObject(V1_JSON_STR, InfoV1.class);
             Assert.assertEquals(V1.getImg(), result.getImg());
             Assert.assertEquals(V1.get(FIELD_EXTRA), result.get(FIELD_EXTRA));
         }
@@ -212,9 +213,9 @@ public class DynamicJsonObjectTest {
     public void testV2() throws Exception {
         {
             // fastjson 序列化
-            Assert.assertEquals(V2_JSON_STR, JsonUtil.toString(V2));
+            Assert.assertEquals(V2_JSON_STR, JsonHelper.toString(V2));
             // fastjson 反序列化
-            InfoV2 result = JsonUtil.parse(V2_JSON_STR, InfoV2.class);
+            InfoV2 result = JsonHelper.parseObject(V2_JSON_STR, InfoV2.class);
             Assert.assertEquals(V2.getImg(), result.getImg());
             Assert.assertEquals(V2.get(FIELD_EXTRA), result.get(FIELD_EXTRA));
             Assert.assertEquals(V2.getName(), result.getName());
@@ -236,7 +237,7 @@ public class DynamicJsonObjectTest {
     public void testV1toV2() throws Exception {
         {
             // fastjson 反序列化
-            InfoV2 result = JsonUtil.parse(V1_JSON_STR, InfoV2.class);
+            InfoV2 result = JsonHelper.parseObject(V1_JSON_STR, InfoV2.class);
             Assert.assertEquals(V1.getImg(), result.getImg());
             Assert.assertEquals(V1.get(FIELD_EXTRA), result.get(FIELD_EXTRA));
             Assert.assertEquals(V1.get(FIELD_NAME), result.getName());
@@ -259,7 +260,7 @@ public class DynamicJsonObjectTest {
     public void testV2toV1() throws Exception {
         {
             // fastjson 反序列化
-            InfoV1 result = JsonUtil.parse(V2_JSON_STR, InfoV1.class);
+            InfoV1 result = JsonHelper.parseObject(V2_JSON_STR, InfoV1.class);
             Assert.assertEquals(V2.getImg(), result.getImg());
             Assert.assertEquals(V2.get(FIELD_EXTRA), result.get(FIELD_EXTRA));
             Assert.assertEquals(V2.getName(), result.get(FIELD_NAME));
