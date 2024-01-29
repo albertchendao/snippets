@@ -12,9 +12,9 @@ import org.mapstruct.factory.Mappers;
 public interface CarMapper {
     CarMapper INSTANCE = Mappers.getMapper(CarMapper.class);
 
-    @Mappings({
-            @Mapping(source = "id", target = "idStr"),
-            @Mapping(source = "numberOfSeats", target = "seatCount")
-    })
+//    @Mappings({
+//            @Mapping(source = "id", target = "idStr"),
+//            @Mapping(source = "numberOfSeats", target = "seatCount")
+//    })
     CarDto carToCarDto(Car car);
 }
